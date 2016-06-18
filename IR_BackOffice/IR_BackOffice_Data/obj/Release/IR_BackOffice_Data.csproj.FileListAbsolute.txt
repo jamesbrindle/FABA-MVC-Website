@@ -1,0 +1,14 @@
+C:\proj\IR_BackOffice\IR_BackOffice\IR_BackOffice_Data\bin\Release\IR_BackOffice_Data.dll
+C:\proj\IR_BackOffice\IR_BackOffice\IR_BackOffice_Data\bin\Release\IR_BackOffice_Data.pdb
+C:\proj\IR_BackOffice\IR_BackOffice\IR_BackOffice_Data\obj\Release\IR_BackOffice_Data.dll
+C:\proj\IR_BackOffice\IR_BackOffice\IR_BackOffice_Data\obj\Release\IR_BackOffice_Data.pdb
+C:\proj\FABA\IR_BackOffice\IR_BackOffice_Data\bin\Release\IR_BackOffice_Data.dll
+C:\proj\FABA\IR_BackOffice\IR_BackOffice_Data\bin\Release\IR_BackOffice_Data.pdb
+C:\proj\FABA\IR_BackOffice\IR_BackOffice_Data\bin\Release\PagedList.Net.dll
+C:\proj\FABA\IR_BackOffice\IR_BackOffice_Data\obj\Release\IR_BackOffice_Data.dll
+C:\proj\FABA\IR_BackOffice\IR_BackOffice_Data\obj\Release\IR_BackOffice_Data.pdb
+D:\Desktop\FABA - MVC Website\IR_BackOffice\IR_BackOffice_Data\bin\Release\IR_BackOffice_Data.dll
+D:\Desktop\FABA - MVC Website\IR_BackOffice\IR_BackOffice_Data\bin\Release\IR_BackOffice_Data.pdb
+D:\Desktop\FABA - MVC Website\IR_BackOffice\IR_BackOffice_Data\bin\Release\PagedList.Net.dll
+D:\Desktop\FABA - MVC Website\IR_BackOffice\IR_BackOffice_Data\obj\Release\IR_BackOffice_Data.dll
+D:\Desktop\FABA - MVC Website\IR_BackOffice\IR_BackOffice_Data\obj\Release\IR_BackOffice_Data.pdb

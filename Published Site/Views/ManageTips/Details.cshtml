@@ -1,0 +1,44 @@
+﻿@model IR_BackOffice_Data.TipsItem
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>TipsItem</legend>
+
+    <div>
+         @Html.DisplayNameFor(model => model.Title)
+    </div>
+    <div>
+        @Html.DisplayFor(model => model.Title)
+    </div>
+
+    <div>
+         @Html.DisplayNameFor(model => model.Text)
+    </div>
+    <div>
+        @Html.DisplayFor(model => model.Text)
+    </div>
+
+    <div>
+         @Html.DisplayNameFor(model => model.DateAdded)
+    </div>
+    <div>
+        @Html.DisplayFor(model => model.DateAdded)
+    </div>
+
+    <div>
+         @Html.DisplayNameFor(model => model.IsLive)
+    </div>
+    <div>
+        @Html.DisplayFor(model => model.IsLive)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,54 @@
+﻿@model IR_BackOffice.Models.EditLeagueCodeModel
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Edit</h2>
+
+@using (Html.BeginForm("Edit", "ManageLeagueCodes", FormMethod.Post, new { @encType = "multipart/form-data" }))
+{
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>EditTipsItem</legend>
+
+        @Html.HiddenFor(model => model.Id)
+
+        <table>
+            <tr>
+                <td style="vertical-align: middle;">
+                    <div>
+                        League Code
+                    </div>
+                    <div>
+                        @Html.EditorFor(model => model.LeagueCode)
+                        @Html.ValidationMessageFor(model => model.LeagueCode)
+                    </div>
+                    <div>
+                        Name / Description
+                    </div>
+                    <div>
+                        @Html.EditorFor(model => model.Name)
+                        @Html.ValidationMessageFor(model => model.Name)
+                    </div>
+                </td>
+            </tr>
+        </table>
+
+        <br />
+        <input type="submit" value="Save" />
+
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("<< Back to List", "Index", null, new { @Style = "color: blue; text-decoration: underline;" })
+    <br />
+    <br />
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

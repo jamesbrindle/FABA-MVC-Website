@@ -1,0 +1,221 @@
+﻿@using IR_BackOffice.Models
+@{
+    ViewBag.Title = "Home";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<script type="text/javascript">
+    window.onload = function (event) {
+        $('#divLatestNews2').css({
+            height: document.getElementById("imgFreeBetPic").height
+        });
+
+        $('#divBookmakerFeed2').css({
+            height: document.getElementById("imgFreeBetPic").height
+        });
+
+        $('#divLiveScores').css({
+            height: document.getElementById("divBetFeed2").style.height
+        });
+    };
+</script>
+
+<script type="text/javascript">
+
+    window.onresize = function (event) {
+        $('#divLatestNews2').css({
+            height: document.getElementById("imgFreeBetPic").height
+        });
+
+        $('#divBookmakerFeed2').css({
+            height: document.getElementById("imgFreeBetPic").height
+        });
+
+        $('#divLiveScores').css({
+            height: document.getElementById("divBetFeed2").style.height
+        });
+    };
+</script>
+
+<div class="container span10">
+
+
+    @*DESKTOP*@
+
+    <div class="hidden-phone offset2">
+        <div>
+            <img src="~/Images/Content/match.jpg" alt="" />
+            <br />
+            <br />
+        </div>
+        <div class="row-fluid">
+            <div class="span8 feed-header" style="background-color: #3a3d3f; vertical-align: middle;">
+                <span style="font-family: Gotham-Medium; color: white;">LATEST BETTING TIPS</span>
+            </div>
+
+            <div class="span4 feed-header" style="background-color: #3a3d3f; vertical-align: middle;">
+                <span style="font-family: Gotham-Medium; color: white;">LIVE SCORES</span>
+            </div>
+        </div>
+
+        <div class="row-fluid">
+            <div class="span8 view-all-header" style="background-color: white; vertical-align: middle;">
+                @{
+                    Html.RenderPartial("_TipsFeed");
+                }
+            </div>
+            <div class="span4 view-all-header" style="background-color: white; vertical-align: middle;">
+                @{
+                    Html.RenderPartial("_LiveScoresFeed");
+                }
+            </div>
+        </div>
+
+        <div class="row-fluid">
+            <div class="span8 feed-footer view-all-header" style="background-color: #3a3d3f; vertical-align: middle;">
+                <span style="font-family: Gotham-Medium; color: white;">@Html.ActionLink("VIEW ALL >", "Tips", "Home", null, new { @style = "font-family: Gotham-Medium; color: white;" })</span>
+            </div>
+
+            <div class="span4 feed-footer view-all-header" style="background-color: #3a3d3f; vertical-align: middle;">
+                <span style="font-family: Gotham-Medium; color: white;"><a href="http://www.scorespro.com/rss2/live-soccer.xml" target="_blank" style="color:white;">ScorePro.com</a></span>
+            </div>
+        </div>
+
+        <div class="row-fluid">
+            <div class="span4 top-buffer feed-header" style="background-color: #3a3d3f; vertical-align: middle;">
+                <span style="font-family: Gotham-Medium; color: white;">LATEST NEWS</span>
+            </div>
+            <div class="span4 top-buffer feed-header" style="background-color: #3a3d3f; vertical-align: middle;">
+                <span style="font-family: Gotham-Medium; color: white;">BOOKMAKER DEALS</span>
+            </div>
+            <div class="span4 top-buffer feed-header" style="background-color: #3a3d3f; vertical-align: middle;">
+                <span style="font-family: Gotham-Medium; color: white;">EARN MONEY NOW</span>
+            </div>
+        </div>
+
+        <div class="row-fluid">
+            <div class="span4 view-all-header" style="background-color: white; vertical-align: middle;">
+                @{
+                    Html.RenderPartial("_NewsFeed");
+                }
+            </div>
+            <div class="span4 view-all-header" style="background-color: white; vertical-align: middle;">
+                @{
+                    Html.RenderPartial("_BookmakerFeed");
+                }
+            </div>
+            <div class="span4 view-all-header" style="background-color: white; vertical-align: middle;">
+                <a href="~/free-bets">
+                    <img id="imgFreeBetPic" src="~/Images/Content/free_bet_pic_large.png" alt=""></a>
+            </div>
+        </div>
+
+        <div class="row-fluid">
+            <div class="span4 feed-footer view-all-header" style="background-color: #3a3d3f; vertical-align: middle;">
+                <span style="font-family: Gotham-Medium; color: white;">@Html.ActionLink("VIEW ALL >", "News", "Home", null, new { @style = "font-family: Gotham-Medium; color: white;" })</span>
+            </div>
+            <div class="span4 feed-footer view-all-header" style="background-color: #3a3d3f; vertical-align: middle;">
+                <span style="font-family: Gotham-Medium; color: white;">@Html.ActionLink("VIEW ALL >", "FreeBets", "Home", null, new { @style = "font-family: Gotham-Medium; color: white;" })</span>
+            </div>
+            <div class="span4 feed-footer view-all-header" style="background-color: #3a3d3f; vertical-align: middle;">
+                <span style="font-family: Gotham-Medium; color: white;">@Html.ActionLink("VIEW ALL >", "FreeBets", "Home", null, new { @style = "font-family: Gotham-Medium; color: white;" })</span>
+            </div>
+        </div>
+
+        <div class="row-fluid top-buffer">
+        </div>
+    </div>
+
+    @*PHONE*@
+
+    <div class="hidden-desktop hidden-tablet">
+        <div class="row-fluid">
+            <div class="span8 feed-header" style="background-color: #3a3d3f; vertical-align: middle;">
+                <span style="font-family: Gotham-Medium; color: white;">LATEST BETTING TIPS</span>
+            </div>
+        </div>
+        <div class="row-fluid">
+            <div class="span8" style="background-color: white; vertical-align: middle;">
+                @{
+                    Html.RenderPartial("_TipsFeed");
+                }
+            </div>
+        </div>
+        <div class="row-fluid">
+            <div class="span8 feed-footer" style="background-color: #3a3d3f; vertical-align: middle;">
+                <span style="font-family: Gotham-Medium; color: white;">@Html.ActionLink("VIEW ALL >", "Tips", "Home", null, new { @style = "font-family: Gotham-Medium; color: white;" })</span>
+            </div>
+        </div>
+
+
+        <div class="row-fluid">
+            <div class="span8 top-buffer feed-header" style="background-color: #3a3d3f; vertical-align: middle;">
+                <span style="font-family: Gotham-Medium; color: white;">LIVE SCORES</span>
+            </div>
+        </div>
+        <div class="row-fluid">
+            <div class="span8" style="background-color: white; vertical-align: middle;">
+                @{
+                    Html.RenderPartial("_LiveScoresFeed");
+                }
+            </div>
+        </div>
+        <div class="row-fluid">
+            <div class="span8 feed-footer" style="background-color: #3a3d3f; vertical-align: middle;">
+                <span style="font-family: Gotham-Medium; color: white;">@Html.ActionLink("VIEW ALL >", "LiveScores", "Home", null, new { @style = "font-family: Gotham-Medium; color: white;" })</span>
+            </div>
+        </div>
+
+
+
+        <div class="row-fluid top-buffer view-all-header">
+            <div class="span8 feed-header top-buffer" style="background-color: #3a3d3f; vertical-align: middle;">
+                <span style="font-family: Gotham-Medium; color: white;">LATEST NEWS</span>
+            </div>
+        </div>
+        <div class="row-fluid">
+            <div class="span8" style="background-color: white; vertical-align: middle;">
+                @{
+                    Html.RenderPartial("_NewsFeed");
+                }
+            </div>
+        </div>
+        <div class="row-fluid">
+            <div class="span8 feed-footer view-all-header" style="background-color: #3a3d3f; vertical-align: middle;">
+                <span style="font-family: Gotham-Medium; color: white;">@Html.ActionLink("VIEW ALL >", "News", "Home", null, new { @style = "font-family: Gotham-Medium; color: white;" })</span>
+            </div>
+        </div>
+
+
+        <div class="row-fluid">
+            <div class="span8 feed-header top-buffer" style="background-color: #3a3d3f; vertical-align: middle;">
+                <span style="font-family: Gotham-Medium; color: white;">BOOKMAKER DEALS</span>
+            </div>
+        </div>
+        <div class="row-fluid">
+            <div class="span8" style="background-color: white; vertical-align: middle;">
+                @{
+                    Html.RenderPartial("_BookmakerFeed");
+                }
+            </div>
+        </div>
+        <div class="row-fluid">
+            <div class="span8 feed-footer view-all-header" style="background-color: #3a3d3f; vertical-align: middle;">
+                <span style="font-family: Gotham-Medium; color: white;">@Html.ActionLink("VIEW ALL >", "FreeBets", "Home", null, new { @style = "font-family: Gotham-Medium; color: white;" })</span>
+            </div>
+        </div>
+        <div class="row-fluid">
+            @*Free Bets*@
+            <div class="span8 top-buffer">
+                <a href="~/free-bets">
+                    <img src="~/Images/Content/free_bet_pic_large.png" alt=""></a>
+            </div>
+        </div>
+        <div class="row-fluid">
+            <div class="span8 feed-footer view-all-header" style="background-color: #3a3d3f; vertical-align: middle;">
+                <span style="font-family: Gotham-Medium; color: white;">@Html.ActionLink("VIEW ALL >", "FreeBets", "Home", null, new { @style = "font-family: Gotham-Medium; color: white;" })</span>
+            </div>
+        </div>
+    </div>
+</div>
+

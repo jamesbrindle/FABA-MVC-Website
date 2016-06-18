@@ -1,0 +1,35 @@
+﻿@model IEnumerable<IR_BackOffice_Data.TipsItem>
+@{
+    ViewBag.Title = "Tips";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<hgroup class="title">
+    <h1>@ViewBag.Title.</h1>
+    <h2>@ViewBag.Message</h2>
+</hgroup>
+
+<div class="span12">
+    <br />
+
+    <div style="padding-right: 10px;"><b>@Html.ActionLink("Add New", "Create", "ManageTips", null, new { @style = "color: blue; text-decoration: underline;" })</b></div>
+    <div style="padding-right: 10px;"><b>@Html.ActionLink("Manage", "Index", "ManageTips", null, new { @style = "color: blue; text-decoration: underline;" })</b></div>
+
+    <h3>Tips Items</h3>
+    @foreach (var p in Model)
+    {
+        <div class="span4">
+            <div class="row">
+                <div class="span2 hidden-phone">
+                    <img src="@Url.Action("DisplayImageAsync", "Tips", new { id = @p.Id })" />
+                </div>
+                <div class="span2">
+                    <h5>@p.Title</h5>
+                    <i>Posted On: @p.DateAdded.ToShortDateString()</i>
+                    <div style="float: right; padding-right: 10px;"><b>@Html.ActionLink("Details •", "Tips", "Tips", new { id = @p.Id }, null)</b></div>
+                </div>
+            </div>
+        </div>
+    }
+</div>
+

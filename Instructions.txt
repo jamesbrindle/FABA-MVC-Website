@@ -1,0 +1,22 @@
+**** MVC Website Created In Visual Studio 2013 ****
+
+**** Football Accumulators and Betting Information ****
+
+
+
+Currently Demoing at: http://demos-faba.jb-net.co.uk
+
+
+
+** Includes live RSS feed of football scores
+
+
+--- ADMIN AREA (Back Office) ---
+
+Go to <site>/admin
+
+User: admin
+Password: password
+
+(or create your own)
+

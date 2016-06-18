@@ -1,0 +1,83 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>@ViewBag.Title - FABA</title>
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <meta name="viewport" content="width=device-width" initial-scale="1.0" />
+    @*
+        The Styles.Render() line ensures that the Bootstrap css files are included. 
+        Include your own style sheet by doing  @Styles.Render("~/Content/Css") and strip out all of the css in the Site.css file
+        The /Content/Bootstrap path is declared in BundleConfig.cs in App_Star t
+        *@
+    @Styles.Render("~/Content/Bootstrap")
+    @Styles.Render("~/Content/css")
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
+    @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/jquery")
+
+
+</head>
+<body onload="init()">
+
+    @*
+        This is the navigation bar. You can hide menu items by using hidden-phone/hidden-tablet classes like so:
+        <li class="hidden-phone">@Html.ActionLink("Contact", "Contact", "Home")</li>
+        *@
+
+    <div class="navbar navbar-inverse" style="vertical-align: middle; background-color: #8bb839">
+        <div class="navbar-inner admin" style="vertical-align: middle; background-color: #8bb839">
+            <div class="container" style="vertical-align: middle; height: 40px;">
+                <table style="height: 100%; vertical-align: middle; border: 0 none white;">
+                    <tr style="height: 100%; vertical-align: middle; background-color: #8bb839; border: 0 none white;">
+                        <td style="height: 100%; vertical-align: middle; background-color: #8bb839; border: 0 none white;">
+                            <a id="simple-menu" href="#sidr" style="height: 100%; vertical-align: middle; background-color: #8bb839; border: 0 none white;">
+                                <span style="font-size: 12pt; margin-left: 15px;">Toggle menu</span>
+                            </a>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+    @* 
+        In here is where we set the layout of all our content. 
+        So this example says we have a 2-8-2 layout with our main control being rendered in the span8.
+        Look in Views/Home/Index.cshtml to see how that is laid out. 
+        
+        To hide any item you just need to use the class hidden-desktop/tablet/phone/print
+        So to hide the far right span 2 give it the following markup: <div class="span2 hidden-phone">
+        
+        You can change this but the sum of the spans needs to equal 12. 
+
+        *@
+    <div id="sidr">
+        <!-- Your content -->
+        <ul>
+            <li class="blueitem"><a href="~/bookmakers-admin/">Bookmakers</a></li>
+            <li class="blueitem"><a href="~/news-admin">News Items</a></li>
+            <li class="blueitem"><a href="~/tips-admin">Tips Items</a></li>
+            <li class="blueitem"><a href="~/league-codes-admin">League Codes</a></li>
+
+        </ul>
+    </div>
+
+
+    <div class="main span10" style="border: 4px solid #8bb839; padding-bottom: 20px; margin-bottom: 20px;">
+        @RenderBody()
+    </div>
+
+
+    @*This Scripts.Render line adds in the Bootstrap Javascript into the page*@
+    @*The path Script/Bootstrap is declared in the BundleConfig.cs in App_Start *@
+    @Scripts.Render("~/Script/Bootstrap")
+    @RenderSection("scripts", required: false)
+    <script>
+
+        function init() {
+            $('#simple-menu').sidr();
+            $.sidr('open', 'sidr');
+        }
+    </script>
+</body>
+</html>

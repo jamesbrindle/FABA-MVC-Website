@@ -1,0 +1,244 @@
+﻿
+/* MAIN CONTENT*/
+
+.content-wrapper {
+    background-color: white;
+}
+
+body {
+    background-color: #44403c;
+}
+
+
+/* FONTS */
+
+@font-face {
+    font-family: Gotham-Light;
+    src: url('fonts/Gotham/Gotham Light.otf') format('OpenType');
+}
+
+@font-face {
+    font-family: Gotham-LightItalic;
+    src: url('fonts/Gotham/Gotham LightItalic.otf') format('OpenType');
+}
+
+@font-face {
+    font-family: Gotham-Bold;
+    src: url('fonts/Gotham/Gotham Bold.otf') format('OpenType');
+}
+
+@font-face {
+    font-family: Gotham-BoldItalic;
+    src: url('fonts/Gotham/Gotham BoldItalic.otf') format('OpenType');
+}
+
+@font-face {
+    font-family: Gotham-BookItalic;
+    src: url('fonts/Gotham/Gotham BookItalic.otf') format('OpenType');
+}
+
+@font-face {
+    font-family: Gotham-Medium;
+    src: url('fonts/Gotham/Gotham Medium.otf') format('OpenType');
+}
+
+@font-face {
+    font-family: Gotham-MediumItalic;
+    src: url('fonts/Gotham/Gotham MediumItalic.otf') format('OpenType');
+}
+
+/* END FONTS */
+
+/* NAVIGATION */
+
+.nagivation {
+    font-family: Gotham-Bold;
+    white-space: nowrap;
+}
+
+.navigation ul {
+    display: inline;
+    list-style-type: none;
+    font-family: Gotham-Bold;
+    white-space: nowrap;
+    margin-left: -34px;
+}
+
+    .navigation ul li {
+        display: inline;
+        list-style-type: none;
+        font-family: Gotham-Bold;
+        white-space: nowrap;
+    }
+
+.navigation a {
+    padding: 5px 15px 5px 15px;
+    border: 1px solid #959292;
+    margin-left: -5px;
+    margin-top: 5px;
+    font-family: Gotham-Bold;
+    border-bottom-width: 0px;
+    border-top-width: 0px;
+    color: #292b2a;
+    background-color: white;
+    font-size: 9pt;
+    white-space: nowrap;
+}
+
+    .navigation a:hover {
+        color: #8bb839;
+        font-family: Gotham-Bold;
+        white-space: nowrap;
+    }
+
+    .navigation a:focus {
+        color: #8bb839;
+        font-family: Gotham-Bold;
+        white-space: nowrap;
+    }
+
+.headerbuttons {
+    border: 0px none white;
+    background-color: white;
+    vertical-align: middle;
+    height: 24px;
+    font-family: Gotham-Bold;
+    font-size: 9pt;
+}
+
+/* END NAVIGATION*/
+
+/* FOOTER*/
+
+.footer {
+    background-color: #44403c;
+    padding: 30px 10px 30px 10px;
+    color: white;
+    height: 100%;
+    font-family: Gotham-medium;
+}
+
+    .footer a {
+        color: white;
+        background-color: #44403c;
+        padding-left: 3px;
+        padding-right: 3px;
+    }
+
+        .footer a:hover {
+            color: white;
+            background-color: #44403c;
+        }
+
+        .footer a:focus {
+            color: white;
+            background-color: #44403c;
+        }
+
+/* END -FOOTER */
+
+/* FEEDS */
+
+.top-buffer {
+    margin-top: 20px;
+}
+
+.feed-header {
+    vertical-align: middle;
+    height: 30px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 7px;
+}
+
+.feed-footer {
+    vertical-align: middle;
+    height: 30px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 7px;
+    font-size: 7pt;
+    text-align: right;
+}
+
+.view-all-header {
+    margin-top: 2px;
+}
+
+
+/* END FEEDS */
+
+/* PAGING */
+
+
+/* END PAGING */
+
+/* MISC */
+
+.hr {
+    width: 100%;
+    height: 0px;
+    background-color: white;
+    border: 1px solid #3a3d3f;
+    margin-bottom: 24px;
+    margin-top: 25px;
+}
+
+.hr-hidden {
+    width: 100%;
+    height: 0px;
+    background-color: white;
+    border: 1px solid white;
+    margin-bottom: 24px;
+    margin-top: 25px;
+}
+
+
+/* END MISC */
+
+/* SCROLL */
+
+.scroll {
+    overflow: auto;
+}
+
+    .scroll::-webkit-scrollbar {
+        width: 12px;
+    }
+
+    .scroll::-webkit-scrollbar-track {
+        -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
+        -ms-box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
+        -moz-box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
+        box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
+        -moz-border-radius: 10px;
+        -webkit-border-radius: 10px;
+        -ms-border-radius: 10px;
+        border-radius: 10px;
+        background-color: #8bb839;
+    }
+
+    .scroll::-webkit-scrollbar-thumb {
+        -moz-border-radius: 10px;
+        -webkit-border-radius: 10px;
+        -ms-border-radius: 10px;
+        border-radius: 10px;
+        -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
+        -moz-box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
+        -ms-box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
+        box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
+        background-color: #8bb839;
+    }
+
+/* END SCROLL */
+
+#IRBottom {
+    background-color: #EEEEEE;
+    bottom: 0;
+    height: 19px;
+    left: 0;
+    -ms-opacity: 0.4;
+    opacity: 0.4;
+    position: fixed;
+    width: 100%;
+}

@@ -1,0 +1,40 @@
+﻿@using System.Globalization
+@using IR_BackOffice.Infrastructure
+@using IR_BackOffice.Models
+@model IR_BackOffice_Data.LeagueCodes
+
+@{
+    ViewBag.Title = "League Code";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="row-fluid">
+    <h3>
+        <b>@Model.LeagueCode</b>
+    </h3>
+    <div>
+        @Model.Name
+    </div>
+
+    <div class="span6">
+        <p>
+            @Model.LeagueCode
+        </p>
+        @{
+            var db = new IR_Database();
+            
+            var next = db.LeagueCodes.OrderByDescending(u => u.Id).Take(1);
+            try
+            {
+                var result = next.Single();
+                int nextid = result.Id;
+            }
+            catch(Exception e)
+            {
+                Console.Out.WriteLine(e.Message);
+            }
+        }
+
+        <a href="#" onclick="history.go(-1);return true;" style="text-decoration: underline"><b>< Back</b></a>
+    </div>
+</div>

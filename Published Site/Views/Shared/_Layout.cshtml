@@ -1,0 +1,154 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>@ViewBag.Title - FABA Marketing</title>
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <meta name="viewport" content="width=device-width" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="description" content="FABA - Football Accumulators and Betting Advice" />
+    <meta name="robots" content="faba, football, football accumulators, football bible, footy bible, fooybible, footiebible, footie bible, betting, gambling, advice, tips, betting tips, live scores, live football scores, football news, new, latest news, gambling advice, betting adivce, gambling tips, football tips, football madness, bible " />
+    <meta name="googlebot" content="faba, football, football accumulators, football bible, footy bible, fooybible, footiebible, footie bible, betting, gambling, advice, tips, betting tips, live scores, live football scores, football news, new, latest news, gambling advice, betting adivce, gambling tips, football tips, football madness, bible " />
+    @Styles.Render("~/Content/front")
+    @Styles.Render("~/Content/bootstrap")
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
+    @Scripts.Render("~/bundles/jquery")
+
+    <script src="~/Scripts/bootstrap.js"></script>
+    @Scripts.Render("~/bundles/modernizr")
+
+    <script>
+        $(document).ready(function () {
+            $("#tooltip-ex a").tooltip({
+                placement: 'top'
+            });
+        });
+    </script>
+</head>
+
+<body style="background-color: #44403c;">
+    <!-- Navigation -->
+    <div style="background-color: #8bb839; -moz-min-width: 381px; -ms-min-width: 381px; -o-min-width: 381px; -webkit-min-width: 381px; min-width: 381px; height: 120px;">
+
+        <div class="row-fluid" style="margin-left:-8px;">
+            <div class="offset2 span8 hidden-phone" style="text-align: left;">
+                <table style="width: 100%">
+                    <tr>
+                        <td style="width: 119px;">
+                            <img src="~/Images/faba_logo.png" style="margin-top: -2px; display: block; text-align: left; vertical-align: bottom;">
+                        </td>
+                        <td style="padding-left: 6px; vertical-align: bottom; text-align: left;">
+                            <p style="font-family: Gotham-Bold; margin-bottom: 5px; margin-right: 10px;">
+                                FOOTBALL ACCUMULATORS<br />
+                                + BETTING ADVICE
+                            </p>
+                        </td>
+                        <td style="text-align: right; vertical-align: top; padding-top: 15px;">
+                            <a href="https://www.facebook.com/FootyaccasFABA" target="_blank" title="Follow on Facebook">
+                                <img src="~/Images/faceboo_button.png" style="margin-top: -2px; margin-right: -20px; text-align: right; vertical-align: top; padding-bottom: 15px;" alt="Follow on Facebook"></a>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+
+        <div class="hidden-desktop hidden-tablet">
+            <table style="margin-left: 15px; width: 100%">
+                <tr>
+                    <td style="width: 119px">
+                        <img src="~/Images/faba_logo.png" style="margin-top: -2px; text-align: left; vertical-align: bottom;">
+                    </td>
+                    <td style="padding-left: 6px; vertical-align: bottom; text-align: left;">
+                        <p style="font-family: Gotham-Bold; margin-bottom: 5px; margin-right: 10px;">
+                            FOOTBALL ACCUMULATORS<br />
+                            + BETTING ADVICE
+                        </p>
+                    </td>
+
+                    <td style="vertical-align: top; text-align: right; padding-top: 15px; padding-right: 15px; white-space: nowrap">
+                        <a href="https://www.facebook.com/FootyaccasFABA" target="_blank">
+                            <img src="~/Images/faceboo_button.png" style="margin-top: -2px; text-align: right; vertical-align: top; padding-bottom: 15px; padding-right: 15px;" alt=""></a>
+                        @*<a href="~/" style="font-family: Gotham-Medium; margin-right: 15px; vertical-align: top; white-space: nowrap">Sign Up</a>
+                        <a href="~/" style="font-family: Gotham-Medium; margin-right: 15px; vertical-align: top; white-space: nowrap">Log In</a>*@
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <div class="row-fluid">
+        <div style="border-bottom: 1px solid #959292; border-top: 1px solid #959292; height: 27px; background-color: white;">
+            <div class="navigation">
+                <div class="offset2 span8 hidden-phone" style="margin-bottom: -3px; margin-top: -2px;">
+                    <ul>
+                        <li style="margin-left:-8px;"><a id="home" href="~/" style="border-right-width: 0;">HOME</a></li>
+                        <li><a id="news-feed" href="~/news" style="border-right-width: 0;">NEWS FEEDS</a></li>
+                        @*<li><a id="live_scores" href="~/live-scores" style="border-right-width: 0;">LIVE SCORES</a></li>*@
+                        <li><a id="betting-tips" href="~/betting-tips" style="border-right-width: 0;">TIPS</a></li>
+                        <li><a id="free-bets" href="~/free-bets">FREE BETS</a></li>
+                    </ul>
+                </div>
+                <div class="offset2 span8 hidden-desktop hidden-tablet" style="margin-bottom: -3px; margin-top: -2px;">
+                    <ul>
+                        <li><a id="home-mob" href="~/" style="border-right-width: 0; border-left-width: 0px; font-size: 7pt;">HOME</a></li>
+                        <li><a id="news-mob" href="~/news" style="border-right-width: 0; font-size: 7pt;">NEWS FEEDS</a></li>
+                        @*<li><a id="live-scores-mob" href="~/live-scores" style="border-right-width: 0; font-size: 7pt;">LIVE SCORES</a></li>*@
+                        <li><a id="betting-tips-mob" href="~/betting-tips" style="border-right-width: 0; font-size: 7pt;">TIPS</a></li>
+                        <li><a id="free-bets-mob" href="~/free-bets" style="font-size: 7pt;">FREE BETS</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <div id="body" style="-moz-min-width: 381px; -ms-min-width: 381px; -o-min-width: 381px; -webkit-min-width: 381px; min-width: 381px;">
+
+        <section class="content-wrapper">
+            <div class="row-fluid">
+                <div class="span12">@RenderBody()</div>
+            </div>
+        </section>
+    </div>
+    <script>
+        $("A").each(function () {
+            if (this.href == document.URL) {
+                if (this.ID != 'home') {
+                    $(this).addClass('active');
+                }
+            }
+
+        });
+    </script>
+    <script>
+        $("A").each(function () {
+            if (this.id == 'home') {
+                $(this).removeClass('active');
+            }
+        });
+    </script>
+    <script>
+        if (document.location.pathname == '/') {
+            $("#home").addClass('active');
+        }
+    </script>
+    <footer>
+        <div class="footer">
+            <div style="text-align: center;">
+                @*<a href="~/sitemap">Sitemap</a><span style="color: #8bb839;"> | </span>*@
+                <a href="~/terms-and-conditions">Terms &amp; Conditions</a><span style="color: #8bb839;"> | </span>
+                <a href="~/privacy-policy">Cookie &amp; Privacy Policy</a><span style="color: #8bb839;"> | </span>
+                <a href="~/contact">Contact</a>
+            </div>
+            <div style="text-align: center; padding-top: 1em; font-size: 9pt;">
+                <span style="color: #8bb839">&copy;</span> 2014 FABA Marketing. <span style="color: #8bb839;">All rights reserved.</span>
+            </div>
+        </div>
+    </footer>
+
+    @RenderSection("scripts", required: false)
+</body>
+</html>

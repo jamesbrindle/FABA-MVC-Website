@@ -1,0 +1,49 @@
+﻿@model IR_BackOffice.Models.RegisterModel
+@{
+    ViewBag.Title = "Registration";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<table style="width: 100%">
+    <tr>
+        <td style="padding-left: 80px;">
+            <hgroup class="title">
+                <h1>@ViewBag.Title</h1>
+
+                <h2>
+                    <br />
+                    Create a new account</h2>
+            </hgroup>
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+                @Html.ValidationSummary()
+
+                <fieldset>
+                    <legend>Registration Form</legend>
+                    <ol>
+                        <li>
+                            @Html.LabelFor(m => m.UserName)
+                            @Html.TextBoxFor(m => m.UserName)
+                        </li>
+                        <li>
+                            @Html.LabelFor(m => m.Password)
+                            @Html.PasswordFor(m => m.Password)
+                        </li>
+                        <li>
+                            @Html.LabelFor(m => m.ConfirmPassword)
+                            @Html.PasswordFor(m => m.ConfirmPassword)
+                        </li>
+                    </ol>
+                    <input type="submit" value="Register" />
+                </fieldset>
+            }
+
+            @section Scripts {
+                @Scripts.Render("~/bundles/jqueryval")
+            }
+        </td>
+    </tr>
+</table>
+
+

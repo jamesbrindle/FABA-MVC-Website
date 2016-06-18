@@ -1,0 +1,29 @@
+﻿@model IR_BackOffice_Data.LeagueCodes
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<fieldset>
+    <legend>LeagueCodes</legend>
+
+    <div>
+        <b>@Html.DisplayNameFor(model => model.LeagueCode): @Html.DisplayFor(model => model.LeagueCode) </b>
+    </div>
+    <div>
+        @Html.Raw(@Html.DisplayFor(model => model.Name))
+    </div>
+</fieldset>
+@using (Html.BeginForm())
+{
+    <br />
+    <p>
+        <input type="submit" value="Delete" />
+        |
+        @Html.ActionLink("Back to List", "Index", null, new { @Style = "color: blue; text-decoration: underline;" })
+    </p>
+}

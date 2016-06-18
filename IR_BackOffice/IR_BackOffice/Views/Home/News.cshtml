@@ -1,0 +1,292 @@
+﻿@model IPagedList<IR_BackOffice_Data.NewsItem>
+
+@using DotNetOpenAuth.Messaging
+@using IR_BackOffice.Infrastructure
+@using IR_BackOffice.Models
+@using PagedList.Mvc
+@using PagedList;
+@using WebGrease.Css.Extensions
+
+
+@using IR_BackOffice.Models
+@using PagedList.Mvc
+@{
+    ViewBag.Title = "Latest News";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<script type="text/javascript">
+    window.onload = function (event) {
+        $('#divBookmakerFeed2').css({
+            height: "280px"
+        });
+
+        $('#divLiveScores').css({
+            height: "280px"
+        });
+
+        $('#divBetFeedMini').css({
+            height: "280px"
+        });
+
+        var height1 = parseInt(document.getElementById("divBetFeedMini").style.height.substring(0, document.getElementById("divBetFeedMini").style.height.length - 2));
+        var height2 = parseInt(document.getElementById("divLiveScores").style.height.substring(0, document.getElementById("divLiveScores").style.height.length - 2));
+        var height3 = parseInt(document.getElementById("divBookmakerFeed2").style.height.substring(0, document.getElementById("divBookmakerFeed2").style.height.length - 2));
+
+        var newsHeight = height1 + height2 + height3 + 250;
+
+        if ($('#divLatestNewsMain').height() < newsHeight) {
+            $('#divLatestNewsMain').css({
+                height: newsHeight
+            });
+        }
+    };
+</script>
+
+<script type="text/javascript">
+
+    window.onresize = function (event) {
+        $('#divBookmakerFeed2').css({
+            height: "280px"
+        });
+
+        $('#divLiveScores').css({
+            height: "280px"
+        });
+
+        $('#divBetFeedMini').css({
+            height: "280px"
+        });
+
+        var height1 = parseInt(document.getElementById("divBetFeedMini").style.height.substring(0, document.getElementById("divBetFeedMini").style.height.length - 2));
+        var height2 = parseInt(document.getElementById("divLiveScores").style.height.substring(0, document.getElementById("divLiveScores").style.height.length - 2));
+        var height3 = parseInt(document.getElementById("divBookmakerFeed2").style.height.substring(0, document.getElementById("divBookmakerFeed2").style.height.length - 2));
+
+        var newsHeight = height1 + height2 + height3 + 250;
+
+        if ($('#divLatestNewsMain').height() < newsHeight) {
+            $('#divLatestNewsMain').css({
+                height: newsHeight
+            });
+        }
+    }
+</script>
+
+<div class="container span10">
+
+    @*DESKTOP*@
+
+    <div class="hidden-phone offset2">
+        <div class="row-fluid">
+            <div class="span8 top-buffer" style="vertical-align: middle;">
+                <span style="font-family: Gotham-Medium; color: #3a3d3f; font-size: 14pt;">LATEST NEWS</span>
+            </div>
+        </div>
+
+        <div class="row-fluid">
+            <div class="span8" style="background-color: white; vertical-align: middle;" id="divLatestNewsMain">
+                @{
+                    try
+                    {
+                        var db = new IR_BackOffice.Infrastructure.IR_Database();
+                        var items = db.NewsItems.OrderByDescending(u => u.DateAdded).Where(u => u.IsLive);
+
+                        if (!items.Any())
+                        {
+                    <div style="background-color: white; padding: 10px 10px 10px 10px;">
+                        <span style="font-family: Gotham-Medium; color: black;">There are no news items to display.</span>
+                    </div>
+                        }
+                        else
+                        {
+                            int index = 0;
+                            int count = Model.Count();
+                    
+                    <div class="pager">
+
+                        <div class="hidden">
+                            @Html.PagedListPager(Model, page => Url.Action("News", "Home", new { page }), PagedListRenderOptions.ClassicPlusFirstAndLast);
+                        </div>
+
+                        @foreach (var item in Model)
+                        {
+                            <div style="background-color: white; line-height: 20px; padding: 5px 10px 5px 10px; margin-top: 5px;">
+                                <table style="text-align: left;">
+                                    <tr style="vertical-align: middle;">
+                                        <td style="width: 220px; text-align: left;">
+                                            <img style="border: 0px none white; max-width: 220px; margin-right: 10px; margin-bottom: 6px;" src="@Url.Action("DisplayImage", "News", new { id = item.Id })" />
+                                        </td>
+                                        <td style="vertical-align: middle;" colspan="2">
+                                            <span style="font-family: Gotham-Medium; font-size: 11pt;">@item.DateAdded.ToLongDateString()</span><br />
+                                            <br />
+                                            <span style="font-family: Gotham-Bold; color: Black; font-size: 12pt;">@item.Title.ToUpper()</span><br />
+                                            <span>@item.ShortText</span>
+                                        </td>
+                                    </tr>
+                                </table>
+                                <div style="text-align: right; margin-bottom: -20px; margin-top: -10px">
+                                    <br />
+                                    <span>@Html.ActionLink("VIEW ARTICLE", "NewsItem", "Home", new { id = item.Id }, new { @style = "font-family: Gotham-Medium;" })</span>
+                                </div>
+
+                                @{
+                            var hrClass = index < count - 1 ? "hr" : "hr-hidden";
+                                }
+
+                                @{ index++; }
+
+                                <div class="@hrClass"></div>
+
+                            </div>
+                        }
+
+                        @Html.PagedListPager(Model, page => Url.Action("News", "Home", new { page }), PagedListRenderOptions.ClassicPlusFirstAndLast);
+
+                    </div>
+                        }
+                    }
+                    catch (Exception e)
+                    {
+                        Console.Out.WriteLine("Error: " + e.Message);
+
+                    <div style="background-color: white; padding: 10px 10px 10px 10px;">
+                        <span style="font-family: Gotham-Medium; color: black;">Error loading new. Please try again later.</span>
+                    </div>
+                    }
+                }
+            </div>
+
+            @*TIPS*@
+
+            <div class="span4 feed-header" style="background-color: #3a3d3f; vertical-align: middle;">
+                <span style="font-family: Gotham-Medium; color: white;">TIPS</span>
+            </div>
+
+            <div class="span4 view-all-header" style="background-color: white; vertical-align: middle;">
+                @{
+                    Html.RenderPartial("_TipsFeedMini");
+                }
+            </div>
+
+            <div class="span4 row-fluid feed-footer view-all-header" style="background-color: #3a3d3f; vertical-align: middle;">
+                <span style="font-family: Gotham-Medium; color: white;">@Html.ActionLink("VIEW ALL >", "News", "Home", null, new { @style = "font-family: Gotham-Medium; color: white;" })</span>
+            </div>
+
+            @*BOOKMAKERS*@
+
+            <div class="span4 feed-header top-buffer" style="background-color: #3a3d3f; vertical-align: middle;">
+                <span style="font-family: Gotham-Medium; color: white;">BOOKMAKERS</span>
+            </div>
+            <div class="span4 view-all-header" style="background-color: white; vertical-align: middle;">
+                @{
+                    Html.RenderPartial("_BookmakerFeed");
+                }
+            </div>
+            <div class="span4 feed-footer view-all-header top-buffer" style="background-color: #3a3d3f; vertical-align: middle;">
+                <span style="font-family: Gotham-Medium; color: white;">@Html.ActionLink("VIEW ALL >", "FreeBets", "Home", null, new { @style = "font-family: Gotham-Medium; color: white;" })</span>
+            </div>
+
+            @*LIVE SCORES*@
+
+            <div class="span4 feed-header top-buffer" style="background-color: #3a3d3f; vertical-align: middle;">
+                <span style="font-family: Gotham-Medium; color: white;">LIVE SCORES</span>
+            </div>
+            <div class="span4 view-all-header" style="background-color: white; vertical-align: middle;">
+                @{
+                    Html.RenderPartial("_LiveScoresFeed");
+                }
+            </div>
+            <div class="span4 feed-footer view-all-header" style="background-color: #3a3d3f; vertical-align: middle;">
+                <span style="font-family: Gotham-Medium; color: white;"><a href="http://www.scorespro.com/rss2/live-soccer.xml" target="_blank" style="color:white;">ScorePro.com</a></span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@*PHONE*@
+
+<div class="hidden-tablet hidden-desktop">
+    <div class="row-fluid">
+        <div class="span8" style="vertical-align: middle; padding-left: 10px; padding-bottom: 10px;">
+            <span style="font-family: Gotham-Medium; color: #3a3d3f; font-size: 14pt;">LATEST NEWS</span>
+        </div>
+    </div>
+
+    <div class="row-fluid">
+        <div class="span8" style="background-color: white; vertical-align: middle;">
+            @{
+                try
+                {
+                    var db = new IR_BackOffice.Infrastructure.IR_Database();
+                    var items = db.NewsItems.OrderByDescending(u => u.DateAdded).Where(u => u.IsLive);
+
+                    if (!items.Any())
+                    {
+                <div style="background-color: white; padding: 10px 10px 10px 10px;">
+                    <span style="font-family: Gotham-Medium; color: black;">There are no news items to display.</span>
+                </div>
+                    }
+                    else
+                    {
+                        int index = 0;
+                        int count = Model.Count();
+                    
+                <div class="pager">
+
+                    <div class="hidden">
+                        @Html.PagedListPager(Model, page => Url.Action("News", "Home", new { page }), PagedListRenderOptions.ClassicPlusFirstAndLast);
+                    </div>
+
+                    @foreach (var item in Model)
+                    {
+                        <div style="background-color: white; line-height: 20px; padding: 5px 10px 5px 10px; margin-top: 5px; text-align: left;">
+                            <table>
+                                <tr style="vertical-align: middle;">
+                                    <td style="width: 220px; text-align: left;">
+                                        <img style="border: 0px none white; max-width: 220px; margin-right: 10px; margin-bottom: 6px;" src="@Url.Action("DisplayImage", "News", new { id = item.Id })" />
+                                    </td>
+                                    <td style="vertical-align: middle;" colspan="2">
+                                        <span style="font-family: Gotham-Medium; font-size: 11pt;">@item.DateAdded.ToLongDateString()</span><br />
+                                        <br />
+                                        <span style="font-family: Gotham-Bold; color: Black; font-size: 12pt;">@item.Title.ToUpper()</span><br />
+                                        <span>@item.ShortText</span>
+                                    </td>
+                                </tr>
+                            </table>
+                            <div style="text-align: right; margin-bottom: -20px; margin-top: -10px">
+                                <br />
+                                <span>@Html.ActionLink("VIEW ARTICLE", "NewsItem", "Home", new { id = item.Id }, new { @style = "font-family: Gotham-Medium;" })</span>
+                            </div>
+
+                            @{
+                        var hrClass = index < count - 1 ? "hr" : "hr-hidden";
+                            }
+
+                            @{ index++; }
+
+                            <div class="@hrClass"></div>
+
+                        </div>
+                    }
+
+                    @Html.PagedListPager(Model, page => Url.Action("News", "Home", new { page }), PagedListRenderOptions.ClassicPlusFirstAndLast);
+
+                </div>
+                    }
+                }
+                catch (Exception e)
+                {
+                    Console.Out.WriteLine("Error: " + e.Message);
+
+                <div style="background-color: white; padding: 10px 10px 10px 10px;">
+                    <span style="font-family: Gotham-Medium; color: black;">Error loading new. Please try again later.</span>
+                </div>
+                }
+            }
+        </div>
+    </div>
+</div>
+
+
+

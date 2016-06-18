@@ -1,0 +1,11 @@
+﻿@using IR_BackOffice.Models
+
+<div id="divTipsItem">
+    <img style="border: 0px none white; max-width: 350px; margin-top:15px; text-align: center;" src="@Url.Action("DisplayImageAsync", "Tips", new { id = Model.Id })" />
+
+    <div style="background-color: white; text-align: left; margin-top: 10px; font-family: Gotham-Light">
+        <br />
+        @Html.Raw(@Model.Text)
+    </div>
+    <div style="padding-bottom: 15px; padding-top: 15px; text-align: left;"><span style="font-family: Gotham-Medium; text-decoration: underline;">@Html.ActionLink("BACK TO LIST", "Tips", "Home", null, null)</span></div>
+</div>

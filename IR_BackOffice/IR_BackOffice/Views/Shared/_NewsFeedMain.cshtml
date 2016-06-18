@@ -1,0 +1,58 @@
+﻿@using IR_BackOffice.Models
+
+<div style="overflow-y: auto; background-color: white;">
+    @{
+        var db = new IR_BackOffice.Infrastructure.IR_Database();
+
+        try
+        {
+            var items = db.NewsItems.OrderByDescending(u => u.DateAdded).Where(u => u.IsLive).Take(10);
+
+            if (!items.Any())
+            {
+        <div style="background-color: white; padding: 10px 10px 10px 10px;">
+            <span style="font-family: Gotham-Medium; color: black;">There are no news items to display.</span>
+        </div>  
+            }
+            else
+            {
+
+
+                foreach (var item in items)
+                {
+        <div style="background-color: white; line-height: 20px; padding: 5px 10px 5px 10px; margin-top: 5px;">
+            <table>
+                <tr style="vertical-align: middle;">
+                    <td style="width: 220px; text-align: left;">
+                        <img style="border: 0px none white; max-width: 220px; margin-right: 10px; margin-bottom: 6px;" src="@Url.Action("DisplayImage", "News", new { id = item.Id })" />
+                    </td>
+                    <td style="vertical-align: middle;" colspan="2">
+                        <span style="font-family: Gotham-Medium; font-size: 11pt;">@item.DateAdded.ToLongDateString()</span><br />
+                        <br />
+                        <span style="font-family: Gotham-Bold; color: Black; font-size: 12pt;">@item.Title.ToUpper()</span><br />
+                        <span>@item.ShortText</span>
+                    </td>
+                </tr>
+            </table>
+            <div style="text-align: right;  margin-bottom: -20px; margin-top:-10px">
+                <br />
+                <span>@Html.ActionLink("VIEW ARTICLE", "NewsItem", "Home", new { id = item.Id }, new {@style="font-family: Gotham-Medium;"})</span>
+            </div>
+            
+            <div class="hr"></div>
+        </div>
+
+                }
+            }
+        }
+        catch (Exception e)
+        {
+            Console.Out.WriteLine("Error: " + e.Message);
+            
+        <div style="background-color: white; padding: 10px 10px 10px 10px;">
+            <span style="font-family: Gotham-Medium; color: black;">Error loading new. Please try again later.</span>
+        </div>  
+        }
+    }
+
+</div>

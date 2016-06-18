@@ -1,0 +1,35 @@
+﻿@model IR_BackOffice_Data.BookmakerItem
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<fieldset>
+    <legend>BookmakerItems</legend>
+
+    <div>
+        <b>@Html.DisplayNameFor(model => model.Title): </b>
+    </div>
+    <div>
+        @Html.Raw(@Html.DisplayFor(model => model.Title))
+    </div>
+    <div>
+        <b>@Html.DisplayNameFor(model => model.Text): </b>
+    </div>
+    <div>
+        @Html.Raw(@Html.DisplayFor(model => model.Text))
+    </div>
+</fieldset>
+@using (Html.BeginForm())
+{
+    <br />
+    <p>
+        <input type="submit" value="Delete" />
+        |
+        @Html.ActionLink("Back to List", "Index", null, new { @Style = "color: blue; text-decoration: underline;" })
+    </p>
+}

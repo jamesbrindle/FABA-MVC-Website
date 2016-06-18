@@ -1,0 +1,23 @@
+﻿@model IR_BackOffice_Data.LeagueCodes
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>LeagueCode</legend>
+
+    <div>
+        @Html.DisplayNameFor(model => model.LeagueCode)
+    </div>
+    <div>
+        @Html.DisplayFor(model => model.Name)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

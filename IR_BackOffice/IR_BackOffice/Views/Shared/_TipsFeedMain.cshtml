@@ -1,0 +1,70 @@
+﻿@using IR_BackOffice.Models
+
+<div id="divBetFeedMain" style="background-color: white;">
+    @{
+        var db = new IR_BackOffice.Infrastructure.IR_Database();
+
+        try
+        {
+            var items = db.TipsItems.OrderByDescending(u => u.DateAdded).Where(u => u.IsLive);
+
+            if (!items.Any())
+            {
+        <div style="background-color: #8bb839; height: 95%; padding: 10px 10px 10px 10px;">
+            <span style="font-family: Gotham-Medium; color: black;">There are no betting tip items to display.</span>
+        </div>  
+            }
+            else
+            {
+                int index = 1;
+                int itemCount = items.Count();
+
+                foreach (var item in items)
+                {
+        <table style="width: 100%; vertical-align: middle;">
+            <tr style="width: 100%; vertical-align: middle;">
+                <td style="width: 1%;">
+                    <div style="background-color: #8bb839; line-height: 20px; padding: 5px 10px 5px 10px; width: 35px; height: 40px;">
+                        &nbsp;
+                    </div>
+                </td>
+                <td style="width: 100px;">
+                    <img style="border: 0px none white; margin-left: -50px; padding-top: 5px; padding-bottom: 5px; margin-right: 50px; height: 80px; max-width: 80px;" src="@Url.Action("DisplayImageAsync", "Tips", new { id = item.Id })" />
+                </td>
+                <td>
+                    <div style="background-color: #8bb839; line-height: 20px; padding: 5px 10px 5px 55px; height: 40px; margin-left: -120px;">
+                        <span style="font-family: Gotham-Medium">@item.DateAdded.ToLongDateString()</span><br />
+                        <span style="font-family: Gotham-Bold; color: white;">@item.Title.ToUpper()</span><br />
+                    </div>
+                </td>
+                <td style="vertical-align: middle; width: 110px; text-align: center;">
+                    <a href="">
+                        <div style="background-color: #3a3d3f; height: 50px; vertical-align: middle; display: table-cell; width: 110px;">
+                            <span style="font-family: Gotham-Bold; color: white; vertical-align: middle;">@Html.ActionLink("VIEW TIP", "TipsItem", "Home", new { id = item.Id }, new { @style = "font-family: Gotham-Bold; color: white; vertical-align: middle; padding-left: 10px; padding-right: 10px;" })</span>
+                        </div>
+                    </a>
+                </td>
+            </tr>
+        </table>
+        
+                    if (index != itemCount)
+                    {
+        <div style="background-color: white; height: 2px;">
+        </div>
+                    }
+
+                    index++;
+                }
+            }
+        }
+        catch (Exception e)
+        {
+            Console.Out.WriteLine("Error: " + e.Message);
+            
+        <div style="background-color: white; height: 95%; padding: 10px 10px 10px 10px;">
+            <span style="font-family: Gotham-Medium; color: black;">Error loading betting tip items. Please try again later.</span>
+        </div>  
+        }
+    }
+
+</div>

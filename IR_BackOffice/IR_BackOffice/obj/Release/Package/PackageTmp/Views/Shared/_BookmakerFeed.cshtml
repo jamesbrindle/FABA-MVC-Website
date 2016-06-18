@@ -1,0 +1,62 @@
+﻿@using IR_BackOffice.Models
+
+<div id="divBookmakerFeed2" style="overflow-y: auto; background-color: white;" class="scroll">
+    @{
+        var db = new IR_BackOffice.Infrastructure.IR_Database();
+
+        try
+        {
+            var items = db.BookmakerItems.OrderByDescending(u => u.DateAdded).Where(u => u.IsLive).Take(10);
+
+            if (!items.Any())
+            {
+        <div style="background-color: #8bb839; padding: 10px 10px 10px 10px;">
+            <span style="font-family: Gotham-Medium; color: black;">There are no bookmaker items to display.</span>
+        </div>  
+            }
+            else
+            {
+                int index = 1;
+                int itemCount = items.Count();
+
+                foreach (var item in items)
+                {
+        <div style="background-color: #8bb839; line-height: 20px; padding: 5px 10px 5px 10px">
+            <table>
+                <tr>
+                    <td style="width: 105px; padding-right: 10px; text-align: left; vertical-align: middle;">
+                        <img style="border: 0px none white; max-height: 40px; max-width: 100px;" src="@Url.Action("DisplayImageAsync", "Bookmaker", new { id = item.Id })" />
+                    </td>
+                    <td>
+                        <span style="font-family: Gotham-Medium">@item.DateAdded.ToLongDateString()</span><br />
+                        <a target="_blank" href="@item.Url"><span style="font-family: Gotham-Bold; color: white;">@item.Title.ToUpper()</span></a><br />
+                        <span style="font-family: Gotham-Medium; color: black; font-size: 7pt;"><a target="_blank" href="@item.Url" style="color: black; text-decoration: none;">VIEW SITE ></a></span><br />
+                    </td>
+                </tr>
+            </table>
+
+
+
+        </div>
+
+                    if (index != itemCount)
+                    {
+        <div style="background-color: white; height: 2px;">
+        </div>
+                    }
+
+                    index++;
+                }
+            }
+        }
+        catch (Exception e)
+        {
+            Console.Out.WriteLine("Error: " + e.Message);
+            
+        <div style="background-color: #8bb839; padding: 10px 10px 10px 10px;">
+            <span style="font-family: Gotham-Medium; color: black;">Error loading bookmaker items. Please try again later.</span>
+        </div>  
+        }
+    }
+
+</div>
