@@ -6,7 +6,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <TimeStampOfAssociatedLegacyPublishXmlFile />
-    <_PublishTargetUrl>D:\Desktop\FABA - MVC Website\Published Site</_PublishTargetUrl>
+    <_PublishTargetUrl>\\JAMIE-SERVER\inetpub\wwwroot\demos-faba</_PublishTargetUrl>
   </PropertyGroup>
   <ItemGroup>
     <File Include="App_Data/aspnet-IR_BackOffice-20140120164306.mdf">
@@ -73,10 +73,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>01/20/2014 16:43:36</publishTime>
     </File>
     <File Include="bin/IR_BackOffice.dll">
-      <publishTime>06/18/2016 19:47:22</publishTime>
+      <publishTime>07/05/2016 11:03:44</publishTime>
     </File>
     <File Include="bin/IR_BackOffice_Data.dll">
-      <publishTime>06/18/2016 18:41:50</publishTime>
+      <publishTime>07/05/2016 11:03:43</publishTime>
     </File>
     <File Include="bin/it/Microsoft.Data.Edm.resources.dll">
       <publishTime>01/20/2014 16:43:37</publishTime>
@@ -1567,7 +1567,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>01/20/2014 16:43:05</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>06/18/2016 19:47:24</publishTime>
+      <publishTime>07/05/2016 11:05:12</publishTime>
     </File>
   </ItemGroup>
 </Project>

@@ -17,6 +17,12 @@ namespace IR_BackOffice.Infrastructure
 
         }
 
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            modelBuilder.HasDefaultSchema("faba");
+            base.OnModelCreating(modelBuilder);
+        }
+
         public DbSet<NewsItem> NewsItems { get; set; }
         public DbSet<BookmakerItem> BookmakerItems { get; set; }
         public DbSet<LeagueCodes> LeagueCodes { get; set; }

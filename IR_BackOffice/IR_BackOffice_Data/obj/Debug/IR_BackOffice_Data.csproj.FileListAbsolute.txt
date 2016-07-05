@@ -1,0 +1,6 @@
+H:\Documents\Work\Repositories\FABA-MVC-Website\IR_BackOffice\IR_BackOffice_Data\bin\Debug\IR_BackOffice_Data.dll
+H:\Documents\Work\Repositories\FABA-MVC-Website\IR_BackOffice\IR_BackOffice_Data\bin\Debug\IR_BackOffice_Data.pdb
+H:\Documents\Work\Repositories\FABA-MVC-Website\IR_BackOffice\IR_BackOffice_Data\bin\Debug\PagedList.Net.dll
+H:\Documents\Work\Repositories\FABA-MVC-Website\IR_BackOffice\IR_BackOffice_Data\obj\Debug\IR_BackOffice_Data.dll
+H:\Documents\Work\Repositories\FABA-MVC-Website\IR_BackOffice\IR_BackOffice_Data\obj\Debug\IR_BackOffice_Data.pdb
+H:\Documents\Work\Repositories\FABA-MVC-Website\IR_BackOffice\IR_BackOffice_Data\obj\Debug\IR_BackOffice_Data.csprojResolveAssemblyReference.cache
