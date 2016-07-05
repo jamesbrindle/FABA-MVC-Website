@@ -15,6 +15,21 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="App_Data/aspnet-IR_BackOffice-20140120164306_log.ldf">
       <publishTime>06/18/2016 19:46:38</publishTime>
     </File>
+    <File Include="App_Start/AuthConfig.cs">
+      <publishTime>01/20/2014 16:43:06</publishTime>
+    </File>
+    <File Include="App_Start/BundleConfig.cs">
+      <publishTime>11/26/2014 16:58:10</publishTime>
+    </File>
+    <File Include="App_Start/FilterConfig.cs">
+      <publishTime>01/20/2014 16:43:06</publishTime>
+    </File>
+    <File Include="App_Start/RouteConfig.cs">
+      <publishTime>12/01/2014 16:07:38</publishTime>
+    </File>
+    <File Include="App_Start/WebApiConfig.cs">
+      <publishTime>01/20/2014 16:43:06</publishTime>
+    </File>
     <File Include="bin/Antlr3.Runtime.dll">
       <publishTime>02/18/2014 10:18:25</publishTime>
     </File>
@@ -73,10 +88,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>01/20/2014 16:43:36</publishTime>
     </File>
     <File Include="bin/IR_BackOffice.dll">
-      <publishTime>07/05/2016 11:03:44</publishTime>
+      <publishTime>07/05/2016 12:51:51</publishTime>
     </File>
     <File Include="bin/IR_BackOffice_Data.dll">
-      <publishTime>07/05/2016 11:03:43</publishTime>
+      <publishTime>07/05/2016 12:51:51</publishTime>
     </File>
     <File Include="bin/it/Microsoft.Data.Edm.resources.dll">
       <publishTime>01/20/2014 16:43:37</publishTime>
@@ -435,11 +450,50 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="Content/themes/base/minified/jquery.ui.theme.min.css">
       <publishTime>01/20/2014 16:43:26</publishTime>
     </File>
+    <File Include="Controllers/AccountController.cs">
+      <publishTime>11/23/2014 14:04:05</publishTime>
+    </File>
+    <File Include="Controllers/AdminController.cs">
+      <publishTime>11/21/2014 10:01:41</publishTime>
+    </File>
+    <File Include="Controllers/BookmakerController.cs">
+      <publishTime>11/24/2014 13:54:41</publishTime>
+    </File>
+    <File Include="Controllers/HomeController.cs">
+      <publishTime>12/02/2014 14:34:35</publishTime>
+    </File>
+    <File Include="Controllers/LeagueCodesController.cs">
+      <publishTime>12/02/2014 14:02:41</publishTime>
+    </File>
+    <File Include="Controllers/ManageBookmakersController.cs">
+      <publishTime>11/29/2014 17:44:44</publishTime>
+    </File>
+    <File Include="Controllers/ManageLeagueCodesController.cs">
+      <publishTime>12/02/2014 14:03:38</publishTime>
+    </File>
+    <File Include="Controllers/ManageNewsController.cs">
+      <publishTime>11/24/2014 14:20:45</publishTime>
+    </File>
+    <File Include="Controllers/ManageTipsController.cs">
+      <publishTime>11/24/2014 14:28:54</publishTime>
+    </File>
+    <File Include="Controllers/NewsController.cs">
+      <publishTime>11/27/2014 12:03:00</publishTime>
+    </File>
+    <File Include="Controllers/TipsController.cs">
+      <publishTime>11/27/2014 12:03:00</publishTime>
+    </File>
     <File Include="favicon.ico">
       <publishTime>12/02/2014 14:13:24</publishTime>
     </File>
+    <File Include="Filters/InitializeSimpleMembershipAttribute.cs">
+      <publishTime>01/20/2014 16:43:06</publishTime>
+    </File>
     <File Include="Global.asax">
       <publishTime>01/20/2014 16:43:05</publishTime>
+    </File>
+    <File Include="Global.asax.cs">
+      <publishTime>11/29/2014 17:09:57</publishTime>
     </File>
     <File Include="Images/bullet.png">
       <publishTime>01/20/2014 16:43:05</publishTime>
@@ -525,11 +579,59 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="Images/twitter_button.png">
       <publishTime>11/20/2014 12:13:36</publishTime>
     </File>
+    <File Include="Infrastructure/IR_Database.cs">
+      <publishTime>07/05/2016 10:51:39</publishTime>
+    </File>
+    <File Include="IR_BackOffice.csproj">
+      <publishTime>07/05/2016 12:51:50</publishTime>
+    </File>
+    <File Include="IR_BackOffice.csproj.user">
+      <publishTime>07/05/2016 12:51:50</publishTime>
+    </File>
+    <File Include="Migrations/Configuration.cs">
+      <publishTime>11/29/2014 17:22:54</publishTime>
+    </File>
+    <File Include="Models/AccountModels.cs">
+      <publishTime>11/21/2014 10:47:10</publishTime>
+    </File>
+    <File Include="Models/BookmakerModels.cs">
+      <publishTime>11/29/2014 17:29:27</publishTime>
+    </File>
+    <File Include="Models/EnquiryModel.cs">
+      <publishTime>11/21/2014 10:47:10</publishTime>
+    </File>
+    <File Include="Models/LeagueCodesModel.cs">
+      <publishTime>12/01/2014 14:18:52</publishTime>
+    </File>
+    <File Include="Models/NewsViewModels.cs">
+      <publishTime>11/24/2014 12:49:09</publishTime>
+    </File>
+    <File Include="Models/TipsViewModels.cs">
+      <publishTime>11/24/2014 12:49:16</publishTime>
+    </File>
+    <File Include="Objects/Codes.cs">
+      <publishTime>12/01/2014 16:29:42</publishTime>
+    </File>
+    <File Include="Objects/Helper.cs">
+      <publishTime>11/29/2014 18:15:19</publishTime>
+    </File>
+    <File Include="Objects/League.cs">
+      <publishTime>06/18/2016 17:47:57</publishTime>
+    </File>
     <File Include="packages.config">
       <publishTime>11/30/2014 13:35:48</publishTime>
     </File>
     <File Include="print.html">
       <publishTime>02/24/2014 15:00:11</publishTime>
+    </File>
+    <File Include="Properties/AssemblyInfo.cs">
+      <publishTime>01/20/2014 16:43:06</publishTime>
+    </File>
+    <File Include="Properties/PublishProfiles/FABA.pubxml">
+      <publishTime>07/05/2016 11:05:11</publishTime>
+    </File>
+    <File Include="Properties/PublishProfiles/Stag.pubxml">
+      <publishTime>02/27/2014 09:16:25</publishTime>
     </File>
     <File Include="Scripts/bootstrap.js">
       <publishTime>11/26/2014 16:58:10</publishTime>
@@ -542,6 +644,9 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     </File>
     <File Include="Scripts/carousel.js">
       <publishTime>11/21/2014 10:42:33</publishTime>
+    </File>
+    <File Include="Scripts/jquery-1.10.2.intellisense.js">
+      <publishTime>11/26/2014 16:58:10</publishTime>
     </File>
     <File Include="Scripts/jquery-1.10.2.js">
       <publishTime>11/26/2014 16:58:10</publishTime>
@@ -1567,7 +1672,13 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>01/20/2014 16:43:05</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>07/05/2016 11:05:12</publishTime>
+      <publishTime>07/05/2016 12:51:56</publishTime>
+    </File>
+    <File Include="Web.Debug.config">
+      <publishTime>01/20/2014 16:43:05</publishTime>
+    </File>
+    <File Include="Web.Release.config">
+      <publishTime>07/05/2016 11:02:54</publishTime>
     </File>
   </ItemGroup>
 </Project>
